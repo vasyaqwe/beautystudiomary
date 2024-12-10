@@ -1,0 +1,12 @@
+---
+const {
+   variant = "default",
+   size = "default",
+   className = "",
+   ...props
+} = Astro.props
+---
+
+<button class={buttonVariants({ variant, size, className })} {...props}>
+   <slot />
+</button>

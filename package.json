@@ -1,0 +1,27 @@
+{
+   "name": "beautystudiomary",
+   "type": "module",
+   "version": "0.0.1",
+   "scripts": {
+      "dev": "astro dev",
+      "build": "astro build",
+      "preview": "astro preview",
+      "astro": "astro",
+      "format-lint": "biome check",
+      "format-lint:fix": "biome check --write",
+      "typecheck": "tsc --noEmit"
+   },
+   "dependencies": {
+      "astro": "^5.0.4",
+      "class-variance-authority": "^0.7.1",
+      "clsx": "^2.1.1",
+      "motion": "^11.13.5",
+      "tailwind-merge": "^2.5.5"
+   },
+   "devDependencies": {
+      "@biomejs/biome": "^1.9.4",
+      "@tailwindcss/postcss": "^4.0.0-beta.6",
+      "tailwindcss": "^4.0.0-beta.6",
+      "typescript": "^5.7.2"
+   }
+}
