@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets"
+import { ImageMetadata } from "node_modules/astro/dist/assets/types"
+
+type Props = {
+   text: string
+   images: Record<string, { src: ImageMetadata; class: string }>
+}
+const { text, images } = Astro.props
+---
+
+<h1
+   class="animated-heading font-bold text-4xl leading-normal md:max-w-[950px] md:text-[3.5rem]"
+>
+   {
+      text.split(" ").map((word, index) => {
+         if (word.startsWith("{") && word.endsWith("}")) {
+            const imageKey = word.slice(1, -1)
+            const src = images[imageKey]?.src
+            const className = images[imageKey]?.class
+
+            if (src) {
+               return (
+                  <span
+                     class="opacity-0 blur-lg inline-block"
+                     data-index={index}
+                  >
+                     <Image
+                        width={200}
+                        height={150}
+                        src={src}
+                        alt=""
+                        class={className}
+                     />
+                  </span>
+               )
+            }
+         }
+         return (
+            <span class="opacity-0 blur-lg inline-block" data-index={index}>
+               {word}&nbsp;
+            </span>
+         )
+      })
+   }
+</h1>
+
+<script>
+   import { animate } from "motion"
+   const elements = document.querySelectorAll(".animated-heading span")
+
+   elements.forEach((element, index) => {
+      animate(
+         element,
+         // @ts-expect-error ...
+         { opacity: 1, filter: "blur(0px)", y: [10 + index * 2, 0] },
+         {
+            delay: 0.04 * (index + 1),
+            duration: 0.5 + 0.1 * (index + 1),
+            easing: "spring",
+         },
+      )
+   })
+</script>

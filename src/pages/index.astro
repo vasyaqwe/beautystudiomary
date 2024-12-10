@@ -1,7 +1,503 @@
 ---
-import Layout from "@/layout/base.astro";
+import Layout from "@/layout/base.astro"
+import AnimatedHeading from "@/pages/_components/animated-heading.astro"
+import nails from "@/assets/nails.jpg"
+import netishyn from "@/assets/netishyn.png"
+import video from "@/assets/video.mp4"
+import { cn } from "@/ui/utils"
+import { buttonVariants } from "@/ui/components/button/constants"
+import { Image } from "astro:assets"
+import image1 from "@/assets/1.jpg"
+
+const defaultTab = "default" // Default selected tab
 ---
 
 <Layout>
-	<!--  -->
+	<section class="grid place-items-center pt-32 pb-16 md:pt-56 md:pb-36">
+		<div class="flex flex-col items-center gap-7 px-5 text-center">
+			<AnimatedHeading
+				images={{
+					nails: {
+						src: nails,
+						class: "-mt-4 mr-4 ml-2 inline-block h-[66px] max-w-[140px] rounded-xl object-cover ring-4 ring-muted transition-all duration-100 max-md:hidden hover:ring-2",
+					},
+					netishyn: {
+						src: netishyn,
+						class: "-mt-4 ml-3 inline-block h-[66px] max-w-[140px] rounded-xl object-contain ring-4 ring-muted transition-all duration-100 max-md:hidden hover:ring-2",
+					},
+				}}
+				text="Студія краси {nails} Mary — найкраща у Нетішині {netishyn}"
+			/>
+			<p
+				data-delay={0.6}
+				class="animated mx-auto max-w-[40ch] text-lg opacity-0 blur-lg"
+			>
+				Ми піклуємось про кожну деталь вашого вигляду, поки ви сидите у
+				комфорті.
+			</p>
+			<div class="animated opacity-0 blur-lg" data-delay={1}>
+				<a
+					href="tel:+38050555555"
+					class={cn("mt-3", buttonVariants({ size: "lg" }))}
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						width={24}
+						height={24}
+					>
+						<path
+							d="M9.1585 5.71223L8.75584 4.80625C8.49256 4.21388 8.36092 3.91768 8.16405 3.69101C7.91732 3.40694 7.59571 3.19794 7.23592 3.08785C6.94883 3 6.6247 3 5.97645 3C5.02815 3 4.554 3 4.15597 3.18229C3.68711 3.39702 3.26368 3.86328 3.09497 4.3506C2.95175 4.76429 2.99278 5.18943 3.07482 6.0397C3.94815 15.0902 8.91006 20.0521 17.9605 20.9254C18.8108 21.0075 19.236 21.0485 19.6496 20.9053C20.137 20.7366 20.6032 20.3131 20.818 19.8443C21.0002 19.4462 21.0002 18.9721 21.0002 18.0238C21.0002 17.3755 21.0002 17.0514 20.9124 16.7643C20.8023 16.4045 20.5933 16.0829 20.3092 15.8362C20.0826 15.6393 19.7864 15.5077 19.194 15.2444L18.288 14.8417C17.6465 14.5566 17.3257 14.4141 16.9998 14.3831C16.6878 14.3534 16.3733 14.3972 16.0813 14.5109C15.7762 14.6297 15.5066 14.8544 14.9672 15.3038C14.4304 15.7512 14.162 15.9749 13.834 16.0947C13.5432 16.2009 13.1588 16.2403 12.8526 16.1951C12.5071 16.1442 12.2426 16.0029 11.7135 15.7201C10.0675 14.8405 9.15977 13.9328 8.28011 12.2867C7.99738 11.7577 7.85602 11.4931 7.80511 11.1477C7.75998 10.8414 7.79932 10.457 7.90554 10.1663C8.02536 9.83828 8.24905 9.56986 8.69643 9.033C9.14586 8.49368 9.37058 8.22402 9.48939 7.91891C9.60309 7.62694 9.64686 7.3124 9.61719 7.00048C9.58618 6.67452 9.44362 6.35376 9.1585 5.71223Z"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+						>
+						</path>
+					</svg>
+					Зателефонувати
+				</a>
+			</div>
+		</div>
+	</section>
+	<div class="min-h-[40vh] md:min-h-[50vh] md:pb-12">
+		<section class="container opacity-0 animated-section">
+			<video
+				autoplay
+				muted
+				loop
+				src={video}
+				class="mx-auto max-h-[90svh] rounded-2xl md:rounded-3xl"
+			>
+			</video>
+		</section>
+	</div>
+	<section class="pt-12 pb-16 md:pt-24 md:pb-24">
+		<h2 class="container font-semibold text-4xl md:text-5xl">Робимо усе:</h2>
+		<div class="mt-9 border-border/50 border-y">
+			<ol
+				class="container flex justify-center divide-border/50 max-md:flex-col md:divide-x max-md:divide-y md:px-0"
+			>
+				<li class="px-10 py-8 font-semibold text-xl md:px-20 md:py-20">
+					<span class="mr-2 inline-block">01.</span> Волосся{" "}
+					<span class="text-3xl">💇‍♀️</span>{" "}
+				</li>
+				<li class="px-10 py-8 font-semibold text-xl md:px-20 md:py-20">
+					<span class="mr-2 inline-block">02.</span> Брови{" "}
+					<span class="text-3xl">🖌️</span>{" "}
+				</li>
+				<li class="px-10 py-8 font-semibold text-xl md:px-20 md:py-20">
+					<span class="mr-2 inline-block">03.</span> Нігті{" "}
+					<span class="text-3xl">💅🏻</span>{" "}
+				</li>
+				<li class="px-10 py-8 font-semibold text-xl md:px-20 md:py-20">
+					<span class="mr-2 inline-block">04.</span> Обличчя{" "}
+					<span class="text-3xl">😊</span>{" "}
+				</li>
+			</ol>
+		</div>
+		<p
+			class="mt-10 flex items-center justify-center gap-1 text-center font-medium text-lg opacity-75"
+		>
+			Приклади робіт знизу
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				width={24}
+				height={24}
+				fill={"transparent"}
+			>
+				<path
+					d="M12 20L12 4"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+				</path>
+				<path
+					d="M17 15C17 15 13.3175 20 11.9999 20C10.6823 20 6.99997 15 6.99997 15"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+				</path>
+			</svg>
+		</p>
+	</section>
+	<section class="pt-6 pb-16 md:pt-12 md:pb-24">
+		<h2 class="container font-semibold text-4xl md:text-5xl">
+			Галерея робіт
+		</h2>
+		<div class="mt-9">
+			<div class="container">
+				<div
+					class="group grid items-center gap-10 py-10 md:grid-cols-2 md:py-14"
+				>
+					<div class="flex h-full flex-col items-start">
+						<h3 class="mt-auto font-semibold text-3xl md:text-4xl">
+							<span class="-ml-2 mb-4 block text-5xl">
+								{" "}
+								💇‍♀️
+							</span>
+							Чоловіча зачіска.
+						</h3>
+						<p class="my-5 text-xl opacity-75">
+							Також робимо Lorem ipsum dolor sit amet.
+						</p>
+						<a
+							href="https://www.instagram.com/p/C-rryqhscLJ/"
+							target="_blank"
+							rel="noreferrer"
+							class={cn(
+								buttonVariants({
+									size: "lg",
+									variant: "secondary",
+								}),
+								"active:!scale-95 mt-auto group-hover:scale-100 md:scale-95 group-hover:opacity-100 md:opacity-0",
+							)}
+						>
+							Інстаграм пост
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								width={24}
+								height={24}
+								fill={"transparent"}
+								class="-ml-1"
+							>
+								<path
+									d="M16.5 7.5L6 18"
+									stroke="currentColor"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								>
+								</path>
+								<path
+									d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
+									stroke="currentColor"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+								</path>
+							</svg>
+						</a>
+					</div>
+					<Image
+						src={image1}
+						alt="Чоловіча зачіска"
+						width={500}
+						height={400}
+						class="rounded-2xl md:justify-self-end"
+					/>
+				</div>
+				<div
+					class="group grid items-center gap-10 py-10 md:grid-cols-2 md:py-14"
+				>
+					<div class="flex h-full flex-col items-start">
+						<h3 class="mt-auto font-semibold text-3xl md:text-4xl">
+							<span class="-ml-2 mb-4 block text-5xl">
+								{" "}
+								💇‍♀️
+							</span>
+							Чоловіча зачіска.
+						</h3>
+						<p class="my-5 text-xl opacity-75">
+							Також робимо Lorem ipsum dolor sit amet.
+						</p>
+						<a
+							href="https://www.instagram.com/p/C-rryqhscLJ/"
+							target="_blank"
+							rel="noreferrer"
+							class={cn(
+								buttonVariants({
+									size: "lg",
+									variant: "secondary",
+								}),
+								"active:!scale-95 mt-auto group-hover:scale-100 md:scale-95 group-hover:opacity-100 md:opacity-0",
+							)}
+						>
+							Інстаграм пост
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								width={24}
+								height={24}
+								fill={"transparent"}
+								class="-ml-1"
+							>
+								<path
+									d="M16.5 7.5L6 18"
+									stroke="currentColor"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								>
+								</path>
+								<path
+									d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
+									stroke="currentColor"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+								</path>
+							</svg>
+						</a>
+					</div>
+					<Image
+						src={image1}
+						alt="Чоловіча зачіска"
+						width={500}
+						height={400}
+						class="rounded-2xl md:justify-self-end"
+					/>
+				</div>
+				<div
+					class="group grid items-center gap-10 py-10 md:grid-cols-2 md:py-14"
+				>
+					<div class="flex h-full flex-col items-start">
+						<h3 class="mt-auto font-semibold text-3xl md:text-4xl">
+							<span class="-ml-2 mb-4 block text-5xl">
+								{" "}
+								💇‍♀️
+							</span>
+							Чоловіча зачіска.
+						</h3>
+						<p class="my-5 text-xl opacity-75">
+							Також робимо Lorem ipsum dolor sit amet.
+						</p>
+						<a
+							href="https://www.instagram.com/p/C-rryqhscLJ/"
+							target="_blank"
+							rel="noreferrer"
+							class={cn(
+								buttonVariants({
+									size: "lg",
+									variant: "secondary",
+								}),
+								"active:!scale-95 mt-auto group-hover:scale-100 md:scale-95 group-hover:opacity-100 md:opacity-0",
+							)}
+						>
+							Інстаграм пост
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								width={24}
+								height={24}
+								fill={"transparent"}
+								class="-ml-1"
+							>
+								<path
+									d="M16.5 7.5L6 18"
+									stroke="currentColor"
+									stroke-width="1.5"
+									stroke-linecap="round"
+								>
+								</path>
+								<path
+									d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
+									stroke="currentColor"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+								</path>
+							</svg>
+						</a>
+					</div>
+					<Image
+						src={image1}
+						alt="Чоловіча зачіска"
+						width={500}
+						height={400}
+						class="rounded-2xl md:justify-self-end"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="where" class="container pb-16 md:pt-12 md:pb-24">
+		<h2 class="font-semibold text-4xl md:text-5xl">Місце знаходження</h2>
+		<div
+			class="mt-9 flex justify-between gap-6 rounded-2xl border border-border/70 bg-white p-7 shadow-sm max-md:flex-col md:py-14"
+		>
+			<p class="text-lg">
+				<span class="mb-4 block font-semibold text-3xl md:text-4xl">
+					Місто Нетішин,
+				</span>{" "}
+				проспект Героїв України 6✨
+			</p>
+			<div>
+				<p>👀 Чекаємо на вас</p>
+				<a
+					href="tel:+38050555555"
+					class={cn("mt-3", buttonVariants({ size: "lg" }))}
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						width={24}
+						height={24}
+						fill={"transparent"}
+					>
+						<path
+							d="M10.2892 21.9614H9.39111C6.14261 21.9614 4.51836 21.9614 3.50918 20.9363C2.5 19.9111 2.5 18.2612 2.5 14.9614V9.96139C2.5 6.66156 2.5 5.01165 3.50918 3.98653C4.51836 2.9614 6.14261 2.9614 9.39111 2.9614H12.3444C15.5929 2.9614 17.4907 3.01658 18.5 4.04171C19.5092 5.06683 19.5 6.66156 19.5 9.96139V11.1478"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+						</path>
+						<path
+							d="M15.9453 2V4M10.9453 2V4M5.94531 2V4"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+						</path>
+						<path
+							d="M7 15H11M7 10H15"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+						>
+						</path>
+						<path
+							opacity="0.93"
+							d="M20.7598 14.8785C19.8544 13.8641 19.3112 13.9245 18.7076 14.1056C18.2851 14.166 16.8365 15.8568 16.2329 16.3952C15.2419 17.3743 14.2464 18.3823 14.1807 18.5138C13.9931 18.8188 13.8186 19.3592 13.7341 19.963C13.5771 20.8688 13.3507 21.8885 13.6375 21.9759C13.9242 22.0632 14.7239 21.8954 15.6293 21.7625C16.2329 21.6538 16.6554 21.533 16.9572 21.3519C17.3797 21.0983 18.1644 20.2046 19.5164 18.8761C20.3644 17.9833 21.1823 17.3664 21.4238 16.7626C21.6652 15.8568 21.3031 15.3737 20.7598 14.8785Z"
+							stroke="currentColor"
+							stroke-width="1.5"
+						>
+						</path>
+					</svg>
+					Записатися
+				</a>
+			</div>
+		</div>
+		<svg
+			class="mx-auto my-6 w-full max-w-[300px] opacity-70 md:my-10"
+			width="507"
+			height="37"
+			viewBox="0 0 507 37"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				class="fill-foreground/70"
+				d="M473.656 37C459.107 37 441.214 20.8022 440.456 20.1188C432.289 11.9657 424.023 4.71749 411.869 4.71749C398.545 4.71749 382.893 19.902 382.733 20.0529L381.377 21.3206C372.749 29.3842 364.599 37 350.083 37C335.534 37 317.641 20.8022 316.883 20.1188C308.717 11.9657 300.451 4.71749 288.297 4.71749C274.973 4.71749 259.321 19.902 259.161 20.0529L257.882 21.2075C248.029 30.0298 240.252 37 226.516 37C211.962 37 194.069 20.8022 193.317 20.1188C185.145 11.9657 176.879 4.71749 164.731 4.71749C151.407 4.71749 135.754 19.902 135.595 20.0529L134.228 21.33C125.605 29.3889 117.455 36.9953 102.944 36.9953C88.3904 36.9953 70.4972 20.7975 69.7448 20.1141C61.5725 11.961 53.307 4.71278 41.1585 4.71278C29.0649 4.71278 10.8309 15.8973 5.17407 25.0778C4.47108 26.2277 2.80698 26.666 1.46142 26.0628C0.121348 25.4501 -0.389417 24.0268 0.319063 22.8769C6.93154 12.1506 27.0273 0 41.1585 0C55.6246 0 65.2248 8.37931 73.8254 16.9613C78.4387 21.1698 92.8335 32.2825 102.944 32.2825C115.044 32.2825 121.722 26.0428 130.18 18.1442L131.509 16.9047C132.168 16.2591 148.941 0.00471019 164.731 0.00471019C179.197 0.00471019 188.797 8.38402 197.398 16.966C202.011 21.1745 216.406 32.2872 226.516 32.2872C237.907 32.2872 244.278 26.5848 253.916 17.951L255.119 16.8717C255.74 16.2591 272.513 0.00471019 288.302 0.00471019C302.774 0.00471019 312.38 8.38402 320.969 16.966C325.583 21.1698 339.978 32.2825 350.089 32.2825C362.193 32.2825 368.877 26.0381 377.34 18.1301L378.658 16.9C379.317 16.2544 396.09 0 411.875 0C426.346 0 435.953 8.37931 444.542 16.9613C449.156 21.1651 463.55 32.2778 473.661 32.2778C485.261 32.2778 496.069 26.9147 501.869 18.2809C502.627 17.1498 504.302 16.7586 505.625 17.4137C506.938 18.0641 507.388 19.5062 506.636 20.6325C499.842 30.732 487.21 37 473.656 37Z"
+			>
+			</path>
+		</svg>
+		<div
+			class="md:-mt-2 has-[input:nth-of-type(1)] relative isolate mx-auto grid h-12 w-full select-none auto-cols-fr grid-flow-col
+		content-center justify-self-center rounded-full border border-border/50 bg-border/60 after:pointer-events-none after:absolute
+		after:top-0.5 after:bottom-0.5 after:left-0.5 after:z-[-1] after:w-[calc(calc(100%-.25rem)/var(--count,3))] sm:max-w-[22rem]
+		after:translate-x-[calc(var(--active,0)*100%)] after:rounded-full after:bg-background after:outline-2 after:outline-transparent
+		has-[:focus-visible]:after:outline-foreground after:transition-[transform,outline] after:duration-200 has-[:checked:nth-of-type(1)]:[--active:0]
+		has-[:checked:nth-of-type(2)]:[--active:1] has-[:checked:nth-of-type(3)]:[--active:2] has-[input:nth-of-type(2)]:[--count:2]
+		has-[input:nth-of-type(3)]:[--count:3]"
+		>
+			<input
+				type="radio"
+				id="default"
+				name="view"
+				value="default"
+				class="sr-only"
+				checked
+			/>
+			<label
+				for="default"
+				class="after:-translate-y-1/2 relative grid h-12 cursor-pointer place-items-center text-center font-medium text-[hsla(0,0%,0%,calc(0.75+var(--highlight,0)))] transition after:absolute after:inset-0.5 after:top-1/2 after:z-[-1] after:h-[42.2px] after:rounded-full after:bg-border/80 after:opacity-0 hover:after:opacity-100 after:outline-2 after:outline-transparent after:transition-opacity after:duration-200"
+			>
+				Звичайна мапа
+			</label>
+
+			<input type="radio" id="3d" name="view" value="3d" class="sr-only" />
+			<label
+				for="3d"
+				class="after:-translate-y-1/2 relative grid h-12 cursor-pointer place-items-center text-center font-medium text-[hsla(0,0%,0%,calc(0.75+var(--highlight,0)))] transition after:absolute after:inset-0.5 after:top-1/2 after:z-[-1] after:h-[42.2px] after:rounded-full after:bg-border/80 after:opacity-0 hover:after:opacity-100 after:outline-2 after:outline-transparent after:transition-opacity after:duration-200"
+			>
+				3Д мапа
+			</label>
+		</div>
+
+		<div class="-mt-0.5">
+			<iframe
+				style={{ outline: "none" }}
+				title="Google Maps"
+				class="iframe focus:!border-none mt-6 h-[600px] max-h-[80svh] w-full rounded-2xl border-4 border-border"
+				referrerpolicy="no-referrer-when-downgrade"
+				src={"https://www.google.com/maps/embed/v1/place?key=AIzaSyDDWGJyScDSalVnzq3wgfF-tNzJpBdl_UE&q=ChIJ8XybXAD_LkcRmUPpx2Zec4s&center=50.331332,26.6486596&zoom=18&language=uk"}
+			>
+			</iframe>
+		</div>
+	</section>
 </Layout>
+
+<script>
+	import { animate } from "motion"
+	const iframe = document.querySelector("iframe")
+	const radios = document.querySelectorAll(
+		"input[type='radio']",
+	) as NodeListOf<HTMLInputElement>
+
+	radios.forEach((radio) => {
+		if (!iframe) return
+
+		if (radio.checked && radio.value === "3d") {
+			iframe.src =
+				"https://www.google.com/maps/embed/v1/streetview?key=AIzaSyDDWGJyScDSalVnzq3wgfF-tNzJpBdl_UE&location=50.331332,26.6486596&language=uk"
+		} else if (radio.value === "default") {
+			iframe.src =
+				"https://www.google.com/maps/embed/v1/place?key=AIzaSyDDWGJyScDSalVnzq3wgfF-tNzJpBdl_UE&q=ChIJ8XybXAD_LkcRmUPpx2Zec4s&center=50.331332,26.6486596&zoom=18&language=uk"
+		}
+		radio.addEventListener("change", () => {
+			const tab = radio.value
+			iframe.src =
+				tab !== "default"
+					? "https://www.google.com/maps/embed/v1/streetview?key=AIzaSyDDWGJyScDSalVnzq3wgfF-tNzJpBdl_UE&location=50.331332,26.6486596&language=uk"
+					: "https://www.google.com/maps/embed/v1/place?key=AIzaSyDDWGJyScDSalVnzq3wgfF-tNzJpBdl_UE&q=ChIJ8XybXAD_LkcRmUPpx2Zec4s&center=50.331332,26.6486596&zoom=18&language=uk"
+		})
+	})
+
+	const animated = document.querySelectorAll(".animated")
+
+	if (animated) {
+		animated.forEach((element) => {
+			const delay = parseFloat(element?.getAttribute("data-delay") ?? "0")
+			animate(
+				element,
+				{ filter: "blur(0px)", opacity: 1, y: [20, 0] },
+				{
+					type: "spring",
+					bounce: 0,
+					duration: 1.8,
+					delay,
+				},
+			)
+		})
+	}
+
+	const animatedSection = document.querySelector(".animated-section")
+	if (animatedSection) {
+		animate(
+			animatedSection,
+			{
+				opacity: 1,
+				y: [innerWidth > 768 ? "50%" : 0, 0], // Start at y: 50% on larger screens
+				filter: [
+					innerWidth > 768 ? "blur(12px)" : "blur(0px)",
+					"blur(0px)",
+				], // Start with blur if large screen
+			},
+			{
+				type: "spring",
+				bounce: 0.2,
+				duration: 1.5,
+				delay: 1.2,
+			},
+		)
+	}
+</script>
